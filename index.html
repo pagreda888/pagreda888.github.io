@@ -719,7 +719,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(15, 23, 42, 0.45);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: var(--white);
@@ -735,7 +735,7 @@
         }
 
         .slider-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(15, 23, 42, 0.6);
             border-color: rgba(255, 255, 255, 0.5);
         }
 
@@ -897,6 +897,85 @@
             opacity: 0.4;
             pointer-events: none;
             cursor: not-allowed;
+        }
+
+        /* PDF Modal */
+        .pdf-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .pdf-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pdf-modal {
+            background: var(--dark-light);
+            border-radius: 16px;
+            max-width: 1200px;
+            width: 100%;
+            height: 90vh;
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-modal-overlay.active .pdf-modal {
+            transform: scale(1);
+        }
+
+        .pdf-modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-modal-title {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .pdf-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .pdf-close:hover {
+            background: var(--primary);
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 16px 16px;
         }
 
         /* Contact Section */
@@ -1265,8 +1344,7 @@
 
             <!-- Project 3: Ziengo Front End -->
             <div class="project-card reveal" data-project="ziengo-frontend">
-                <div class="project-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
-                    🎨
+                <div class="project-image" style="background: url('img/ziengo/ziengo_preview.png') center/cover;">
                     <div class="project-image-overlay">
                         <button class="btn-details" data-en="View Details" data-es="Ver Detalles">Ver Detalles</button>
                     </div>
@@ -1295,26 +1373,26 @@
 
             <!-- Project 4: Serie de Fourier -->
             <div class="project-card reveal" data-project="fourier">
-                <div class="project-image" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);">
-                    📊
+                <div class="project-image" style="background: url('img/fourier/fourier_preview.png') center/cover;">
                     <div class="project-image-overlay">
                         <button class="btn-details" data-en="View Details" data-es="Ver Detalles">Ver Detalles</button>
                     </div>
                 </div>
                 <div class="project-content">
                     <div class="project-tags">
-                        <span class="project-tag">Por definir</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">LaTeX</span>
                     </div>
-                    <h3>Serie de Fourier</h3>
-                    <p>Visualización matemática - Diciembre 2023</p>
+                    <h3 data-en="Truncated Fourier Series" data-es="Serie de Fourier Truncada">Serie de Fourier Truncada</h3>
+                    <p data-en="Mathematical Visualization - December 2023" data-es="Visualización matemática - Diciembre 2023">Visualización matemática - Diciembre 2023</p>
                     <div class="project-links">
-                        <a href="#" class="project-link">
+                        <a href="https://github.com/pagreda888/Truncated-Fourier-series" class="project-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                             <span data-en="Code" data-es="Código">Código</span>
                         </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-en="Demo" data-es="Demo">Demo</span>
+                        <a href="#" class="project-link" data-pdf="docs/REPORTE_MAP_MATEMATICA_VI.pdf">
+                            <i class="fas fa-file-pdf"></i>
+                            <span data-en="Documentation" data-es="Documentación">Documentación</span>
                         </a>
                     </div>
                 </div>
@@ -1415,33 +1493,6 @@
                     </div>
                     <h3>Tienda en Línea</h3>
                     <p>E-commerce - Septiembre 2020</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            <span data-en="Code" data-es="Código">Código</span>
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-en="Demo" data-es="Demo">Demo</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9: Planning Tool 2020 -->
-            <div class="project-card reveal" data-project="planning-tool-2020">
-                <div class="project-image" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
-                    📋
-                    <div class="project-image-overlay">
-                        <button class="btn-details" data-en="View Details" data-es="Ver Detalles">Ver Detalles</button>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">Por definir</span>
-                    </div>
-                    <h3>Planning Tool 2020</h3>
-                    <p>Herramienta de planificación - 2020</p>
                     <div class="project-links">
                         <a href="#" class="project-link">
                             <i class="fab fa-github"></i>
@@ -1697,9 +1748,9 @@
                         <i class="fab fa-github"></i>
                         <span data-en="View Code" data-es="Ver Código">Ver Código</span>
                     </a>
-                    <a href="#" class="modal-btn modal-btn-demo" id="modalDemo" target="_blank">
-                        <i class="fas fa-play-circle"></i>
-                        <span data-en="View Demo" data-es="Ver Demo">Ver Demo</span>
+                    <a href="#" class="modal-btn modal-btn-demo" id="modalDemo">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="modalDemoText" data-en="View Demo" data-es="Ver Demo">Ver Demo</span>
                     </a>
                 </div>
             </div>
@@ -1808,6 +1859,13 @@
                 title: 'Interview Data Lab',
                 date: { en: 'December 2025', es: 'Diciembre 2025' },
                 emoji: '🧠',
+                slides: [
+                    'img/idl/1.png',
+                    'img/idl/2.png',
+                    'img/idl/3.png',
+                    'img/idl/4.png',
+                    'img/idl/5.png'
+                ],
                 description: {
                     en: 'AI-powered talent analysis platform that automates recruitment processes. It analyzes resumes, matches candidates with job requirements, and conducts real-time interviews with sentiment analysis to provide objective hiring recommendations.',
                     es: 'Plataforma de análisis de talento con IA que automatiza procesos de reclutamiento. Analiza currículums, empareja candidatos con requisitos del puesto y realiza entrevistas en tiempo real con análisis de sentimientos para dar recomendaciones objetivas de contratación.'
@@ -1843,6 +1901,12 @@
                 title: 'Ziengo Front End',
                 date: { en: 'February 2025', es: 'Febrero 2025' },
                 emoji: '🎨',
+                preview: 'img/ziengo/ziengo_preview.png',
+                slides: [
+                    'img/ziengo/1.png',
+                    'img/ziengo/2.png',
+                    'img/ziengo/3.png'
+                ],
                 description: {
                     en: 'Comprehensive mobile app interface development in Flutter, achieving a faithful replication of Figma designs and prioritizing high user experience (UX) standards. Worked closely with the backend team for service integration, developed new features under an organized structure using Git.',
                     es: 'Desarrollo integral de la interfaz de una app móvil en Flutter, logrando una réplica fiel de los diseños de Figma y priorizando altos estándares de experiencia de usuario (UX). Trabajé en estrecha colaboración con el equipo de backend para la integración de servicios, desarrollé nuevas funcionalidades bajo una estructura organizada mediante Git.'
@@ -1857,14 +1921,26 @@
                 demo: '#'
             },
             'fourier': {
-                title: 'Serie de Fourier',
-                date: 'Diciembre 2023',
+                title: { en: 'Truncated Fourier Series', es: 'Serie de Fourier Truncada' },
+                date: { en: 'December 2023', es: 'Diciembre 2023' },
                 emoji: '📊',
-                description: 'Detalles del proyecto por definir.',
-                frontend: ['Por definir'],
-                backend: ['Por definir'],
-                github: '#',
-                demo: '#'
+                preview: 'img/fourier/fourier_preview.png',
+                slides: [
+                    'img/fourier/1.png',
+                    'img/fourier/2.png'
+                ],
+                description: {
+                    en: 'Implementation of truncated Fourier series for engineering applications. Calculates the approximation of periodic functions using trigonometric Fourier series (TFS) with 2N+1 terms and evaluates accuracy using Integral of Squared Error (ISE).',
+                    es: 'Implementación de series de Fourier truncadas para aplicaciones de ingeniería. Calcula la aproximación de funciones periódicas usando series de Fourier trigonométricas (SFT) con 2N+1 términos y evalúa la precisión mediante la Integral Cuadrada del Error (ICE).'
+                },
+                functionality: {
+                    en: 'User interface allows input of periodic functions with their intervals. The system calculates Fourier coefficients (a₀, aₙ, bₙ), generates approximation graphs for different N values (3, 5, 10), displays the energy of the signal, and computes the truncated trigonometric Fourier series equation. Includes ISE calculation to determine optimal N value for the best approximation.',
+                    es: 'Interfaz de usuario permite el ingreso de funciones periódicas con sus intervalos. El sistema calcula los coeficientes de Fourier (a₀, aₙ, bₙ), genera gráficas de aproximación para diferentes valores de N (3, 5, 10), muestra la energía de la señal y calcula la ecuación de la serie de Fourier trigonométrica truncada. Incluye cálculo de ICE para determinar el valor óptimo de N.'
+                },
+                frontend: ['Python', 'Matplotlib'],
+                backend: ['NumPy', 'SciPy', 'LaTeX'],
+                github: 'https://github.com/pagreda888/Truncated-Fourier-series',
+                demo: 'docs/REPORTE_MAP_MATEMATICA_VI.pdf'
             },
             'quetsalud': {
                 title: 'Quetsalud',
@@ -1900,16 +1976,6 @@
                 title: 'Tienda en Línea',
                 date: 'Septiembre 2020',
                 emoji: '🛒',
-                description: 'Detalles del proyecto por definir.',
-                frontend: ['Por definir'],
-                backend: ['Por definir'],
-                github: '#',
-                demo: '#'
-            },
-            'planning-tool-2020': {
-                title: 'Planning Tool 2020',
-                date: '2020',
-                emoji: '📋',
                 description: 'Detalles del proyecto por definir.',
                 frontend: ['Por definir'],
                 backend: ['Por definir'],
@@ -1952,13 +2018,25 @@
             const project = projectsData[projectId];
             if (!project) return;
 
-            // Mostrar slider para IDL, preview image si existe, emoji para otros
+            // Mostrar slider si existe, preview image si existe, emoji para otros
             const modalEmoji = document.getElementById('modalEmoji');
             const modalSlider = document.getElementById('modalSlider');
+            const sliderImagesEl = document.getElementById('sliderImages');
+            const sliderDotsEl = document.getElementById('sliderDots');
             
-            if (projectId === 'interview-data-lab') {
+            if (project.slides && Array.isArray(project.slides) && project.slides.length > 0) {
                 modalEmoji.style.display = 'none';
                 modalSlider.style.display = 'block';
+
+                if (sliderImagesEl && sliderDotsEl) {
+                    sliderImagesEl.innerHTML = project.slides
+                        .map((src, idx) => `<img src="${src}" class="slider-image${idx === 0 ? ' active' : ''}" alt="Slide ${idx + 1}">`)
+                        .join('');
+                    sliderDotsEl.innerHTML = project.slides
+                        .map((_, idx) => `<span class="dot${idx === 0 ? ' active' : ''}" data-index="${idx}"></span>`)
+                        .join('');
+                }
+
                 currentSlide = 0;
                 showSlide(0);
             } else {
@@ -1984,7 +2062,7 @@
             };
             
             document.getElementById('modalDate').textContent = getLocalizedText(project.date);
-            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalTitle').textContent = getLocalizedText(project.title);
             document.getElementById('modalDescription').textContent = getLocalizedText(project.description);
             document.getElementById('modalFunctionality').textContent = getLocalizedText(project.functionality) || (currentLang === 'en' ? 'Functionality details coming soon.' : 'Información de funcionamiento próximamente.');
             
@@ -1996,6 +2074,8 @@
             
             const modalGithubBtn = document.getElementById('modalGithub');
             const modalDemoBtn = document.getElementById('modalDemo');
+            const modalDemoText = document.getElementById('modalDemoText');
+            const modalDemoIcon = modalDemoBtn.querySelector('i');
             
             // Habilitar/deshabilitar botones según si tienen links válidos
             if (project.github && project.github !== '#') {
@@ -2007,11 +2087,38 @@
             }
             
             if (project.demo && project.demo !== '#') {
-                modalDemoBtn.href = project.demo;
                 modalDemoBtn.classList.remove('disabled');
+                // Detectar si es un PDF
+                if (project.demo.endsWith('.pdf')) {
+                    modalDemoText.setAttribute('data-en', 'Documentation');
+                    modalDemoText.setAttribute('data-es', 'Documentación');
+                    modalDemoText.textContent = currentLang === 'en' ? 'Documentation' : 'Documentación';
+                    modalDemoIcon.className = 'fas fa-file-pdf';
+                    modalDemoBtn.href = '#';
+                    modalDemoBtn.removeAttribute('target');
+                    modalDemoBtn.removeAttribute('rel');
+                    modalDemoBtn.setAttribute('data-pdf', project.demo);
+                    modalDemoBtn.onclick = null;
+                } else {
+                    modalDemoText.setAttribute('data-en', 'View Demo');
+                    modalDemoText.setAttribute('data-es', 'Ver Demo');
+                    modalDemoText.textContent = currentLang === 'en' ? 'View Demo' : 'Ver Demo';
+                    modalDemoIcon.className = 'fas fa-play-circle';
+                    modalDemoBtn.href = project.demo;
+                    modalDemoBtn.target = '_blank';
+                    modalDemoBtn.rel = 'noopener noreferrer';
+                    modalDemoBtn.removeAttribute('data-pdf');
+                    modalDemoBtn.onclick = null;
+                }
             } else {
                 modalDemoBtn.href = '#';
                 modalDemoBtn.classList.add('disabled');
+                modalDemoText.setAttribute('data-en', 'View Demo');
+                modalDemoText.setAttribute('data-es', 'Ver Demo');
+                modalDemoText.textContent = currentLang === 'en' ? 'View Demo' : 'Ver Demo';
+                modalDemoIcon.className = 'fas fa-play-circle';
+                modalDemoBtn.removeAttribute('data-pdf');
+                modalDemoBtn.onclick = null;
             }
 
             modalOverlay.classList.add('active');
@@ -2020,35 +2127,46 @@
 
         // Slider functionality
         let currentSlide = 0;
-        const sliderImages = document.querySelectorAll('.slider-image');
-        const sliderDots = document.querySelectorAll('.dot');
         const sliderPrev = document.getElementById('sliderPrev');
         const sliderNext = document.getElementById('sliderNext');
+        const sliderDotsEl = document.getElementById('sliderDots');
 
         function showSlide(n) {
+            const sliderImages = document.querySelectorAll('#sliderImages .slider-image');
+            const sliderDots = document.querySelectorAll('#sliderDots .dot');
+            if (!sliderImages.length || !sliderDots.length) return;
+
             sliderImages.forEach(img => img.classList.remove('active'));
             sliderDots.forEach(dot => dot.classList.remove('active'));
-            
-            sliderImages[n].classList.add('active');
-            sliderDots[n].classList.add('active');
+
+            const safeIndex = Math.max(0, Math.min(n, sliderImages.length - 1));
+            sliderImages[safeIndex].classList.add('active');
+            sliderDots[safeIndex].classList.add('active');
         }
 
         sliderPrev.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + sliderImages.length) % sliderImages.length;
+            const total = document.querySelectorAll('#sliderImages .slider-image').length;
+            if (!total) return;
+            currentSlide = (currentSlide - 1 + total) % total;
             showSlide(currentSlide);
         });
 
         sliderNext.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % sliderImages.length;
+            const total = document.querySelectorAll('#sliderImages .slider-image').length;
+            if (!total) return;
+            currentSlide = (currentSlide + 1) % total;
             showSlide(currentSlide);
         });
 
-        sliderDots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                currentSlide = parseInt(e.target.dataset.index);
+        if (sliderDotsEl) {
+            sliderDotsEl.addEventListener('click', (e) => {
+                const dot = e.target.closest('.dot');
+                if (!dot) return;
+                currentSlide = parseInt(dot.dataset.index);
+                if (Number.isNaN(currentSlide)) return;
                 showSlide(currentSlide);
             });
-        });
+        }
 
         function closeModal() {
             modalOverlay.classList.remove('active');
@@ -2078,8 +2196,13 @@
             anchor.addEventListener('click', function (e) {
                 // No prevenir enlaces del modal que son externos
                 if (this.closest('.modal-links')) return;
+                const href = this.getAttribute('href');
+                if (!href || href === '#') {
+                    e.preventDefault();
+                    return;
+                }
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -2088,6 +2211,72 @@
                 }
             });
         });
+
+        // PDF Modal (works on static sites)
+        function openPdfModal(pdfUrl) {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (!pdfModal || !pdfViewer) return;
+            pdfViewer.src = pdfUrl;
+            pdfModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdfModal() {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (!pdfModal || !pdfViewer) return;
+            pdfModal.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                pdfViewer.src = '';
+            }, 200);
+        }
+
+        // Open PDF modal from any element with data-pdf
+        document.addEventListener('click', (e) => {
+            const trigger = e.target.closest('[data-pdf]');
+            if (!trigger) return;
+            e.preventDefault();
+            const pdfUrl = trigger.getAttribute('data-pdf');
+            if (!pdfUrl) return;
+            openPdfModal(pdfUrl);
+        });
+
+        // Wire close handlers after DOM is parsed (PDF modal HTML is after this script)
+        document.addEventListener('DOMContentLoaded', () => {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfClose = document.getElementById('pdfClose');
+            if (!pdfModal || !pdfClose) return;
+
+            pdfClose.addEventListener('click', closePdfModal);
+            pdfModal.addEventListener('click', (e) => {
+                if (e.target === pdfModal) closePdfModal();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            const pdfModal = document.getElementById('pdfModal');
+            if (pdfModal && pdfModal.classList.contains('active')) {
+                closePdfModal();
+            }
+        });
     </script>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal-overlay" id="pdfModal">
+        <div class="pdf-modal">
+            <div class="pdf-modal-header">
+                <h3 class="pdf-modal-title" data-en="Technical Documentation - Truncated Fourier Series" data-es="Documentación Técnica - Serie de Fourier Truncada">Documentación Técnica - Serie de Fourier Truncada</h3>
+                <button class="pdf-close" id="pdfClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="pdf-viewer">
+                <iframe id="pdfViewer" src=""></iframe>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
