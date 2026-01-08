@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBKP4H97HB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GBKP4H97HB');
+    </script>
     <style>
         :root {
             --primary: #6366f1;
@@ -90,6 +103,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -233,13 +247,13 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+                radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
         }
 
         .hero-grid {
             position: absolute;
             inset: 0;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -276,13 +290,27 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
         .hero h1 {
@@ -386,6 +414,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1197,12 +1226,13 @@
         }
     </style>
 </head>
+
 <body class="has-alert">
     <!-- Alert Banner -->
     <div class="alert-banner" id="alertBanner">
         <i class="fas fa-exclamation-circle"></i>
-        <span data-en="🚧 This site is still under construction and is constantly being updated" 
-              data-es="🚧 Este sitio se encuentra aún en construcción y está en constante actualización">
+        <span data-en="🚧 This site is still under construction and is constantly being updated"
+            data-es="🚧 Este sitio se encuentra aún en construcción y está en constante actualización">
             🚧 Este sitio se encuentra aún en construcción y está en constante actualización
         </span>
     </div>
@@ -1211,9 +1241,9 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">&lt;Dev /&gt;</a>
-            <span class="nav-timestamp" data-en="Last update: Dec 29, 2025 - 09:50 AM" 
-                  data-es="Última actualización: 29 dic 2025 - 09:50 AM">
-                Última actualización: 29 dic 2025 - 09:50 AM
+            <span class="nav-timestamp" data-en="Last update: Dec 29, 2025 - 07:02 PM"
+                data-es="Última actualización: 29 dic 2025 - 07:02 PM">
+                Última actualización: 29 dic 2025 - 07:02 PM
             </span>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#projects" data-en="Projects" data-es="Proyectos">Proyectos</a></li>
@@ -1245,8 +1275,12 @@
                 <span data-en="Hi, I'm " data-es="Hola, soy ">Hi, I'm </span>
                 <span class="gradient">Pablo Agreda</span>
             </h1>
-            <p class="hero-description" data-en="Passionate about technology and creating impact. Creative, dedicated, and driven by the desire to solve problems and build solutions that matter. I love working as a team and helping others grow through digital transformation." data-es="Apasionado por la tecnología y crear impacto. Creativo, dedicado y movido por el deseo de resolver problemas y construir soluciones que importen. Me encanta trabajar en equipo y ayudar a otros a crecer a través de la transformación digital.">
-                Apasionado por la tecnología y crear impacto. Creativo, dedicado y movido por el deseo de resolver problemas y construir soluciones que importen. Me encanta trabajar en equipo y ayudar a otros a crecer a través de la transformación digital.
+            <p class="hero-description"
+                data-en="Passionate about technology and creating impact. Creative, dedicated, and driven by the desire to solve problems and build solutions that matter. I love working as a team and helping others grow through digital transformation."
+                data-es="Apasionado por la tecnología y crear impacto. Creativo, dedicado y movido por el deseo de resolver problemas y construir soluciones que importen. Me encanta trabajar en equipo y ayudar a otros a crecer a través de la transformación digital.">
+                Apasionado por la tecnología y crear impacto. Creativo, dedicado y movido por el deseo de resolver
+                problemas y construir soluciones que importen. Me encanta trabajar en equipo y ayudar a otros a crecer a
+                través de la transformación digital.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">
@@ -1262,7 +1296,8 @@
                 <!-- <a href="#" class="social-link" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a> -->
-                <a href="https://www.linkedin.com/in/pa8" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/pa8" class="social-link" aria-label="LinkedIn" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <!-- <a href="#" class="social-link" aria-label="Twitter">
@@ -1281,7 +1316,9 @@
         <div class="section-header reveal">
             <span class="section-tag" data-en="My Work" data-es="Mi Trabajo">My Work</span>
             <h2 class="section-title" data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
-            <p class="section-subtitle" data-en="A selection of my recent work and personal projects" data-es="Una selección de mi trabajo reciente y proyectos personales">A selection of my recent work and personal projects</p>
+            <p class="section-subtitle" data-en="A selection of my recent work and personal projects"
+                data-es="Una selección de mi trabajo reciente y proyectos personales">A selection of my recent work and
+                personal projects</p>
         </div>
         <div class="projects-grid">
             <!-- Project 1: Interview Data Lab -->
@@ -1299,7 +1336,10 @@
                         <span class="project-tag">Firebase</span>
                     </div>
                     <h3>Interview Data Lab</h3>
-                    <p data-en="AI-powered talent analysis platform: CV-job matching, psychometric analysis and real-time interviews." data-es="Plataforma de análisis de talento con IA: matching CV-puesto, análisis psicométrico y entrevistas en tiempo real.">Plataforma de análisis de talento con IA: matching CV-puesto, análisis psicométrico y entrevistas en tiempo real.</p>
+                    <p data-en="AI-powered talent analysis platform: CV-job matching, psychometric analysis and real-time interviews."
+                        data-es="Plataforma de análisis de talento con IA: matching CV-puesto, análisis psicométrico y entrevistas en tiempo real.">
+                        Plataforma de análisis de talento con IA: matching CV-puesto, análisis psicométrico y
+                        entrevistas en tiempo real.</p>
                     <div class="project-links">
                         <a href="#" class="project-link disabled">
                             <i class="fab fa-github"></i>
@@ -1328,9 +1368,13 @@
                         <span class="project-tag">Vite</span>
                     </div>
                     <h3>Test API Service</h3>
-                    <p data-en="API endpoint that merges data from multiple sources: photos, albums, and users. Served to a React frontend." data-es="Endpoint de API que combina datos de múltiples fuentes: fotos, álbumes y usuarios. Servido a un frontend en React.">Endpoint de API que combina datos de múltiples fuentes: fotos, álbumes y usuarios. Servido a un frontend en React.</p>
+                    <p data-en="API endpoint that merges data from multiple sources: photos, albums, and users. Served to a React frontend."
+                        data-es="Endpoint de API que combina datos de múltiples fuentes: fotos, álbumes y usuarios. Servido a un frontend en React.">
+                        Endpoint de API que combina datos de múltiples fuentes: fotos, álbumes y usuarios. Servido a un
+                        frontend en React.</p>
                     <div class="project-links">
-                        <a href="https://github.com/pagreda888/relish_technical_test.git" target="_blank" class="project-link">
+                        <a href="https://github.com/pagreda888/relish_technical_test.git" target="_blank"
+                            class="project-link">
                             <i class="fab fa-github"></i>
                             <span data-en="Code" data-es="Código">Código</span>
                         </a>
@@ -1357,7 +1401,10 @@
                         <span class="project-tag">Figma</span>
                     </div>
                     <h3>Ziengo Front End</h3>
-                    <p data-en="Mobile app development with Flutter, faithfully replicating Figma designs and prioritizing high UX standards." data-es="Desarrollo de app móvil con Flutter, replicando fielmente diseños de Figma y priorizando altos estándares de UX.">Desarrollo de app móvil con Flutter, replicando fielmente diseños de Figma y priorizando altos estándares de UX.</p>
+                    <p data-en="Mobile app development with Flutter, faithfully replicating Figma designs and prioritizing high UX standards."
+                        data-es="Desarrollo de app móvil con Flutter, replicando fielmente diseños de Figma y priorizando altos estándares de UX.">
+                        Desarrollo de app móvil con Flutter, replicando fielmente diseños de Figma y priorizando altos
+                        estándares de UX.</p>
                     <div class="project-links">
                         <a href="#" class="project-link">
                             <i class="fab fa-github"></i>
@@ -1383,10 +1430,14 @@
                         <span class="project-tag">Python</span>
                         <span class="project-tag">LaTeX</span>
                     </div>
-                    <h3 data-en="Truncated Fourier Series" data-es="Serie de Fourier Truncada">Serie de Fourier Truncada</h3>
-                    <p data-en="Mathematical Visualization - December 2023" data-es="Visualización matemática - Diciembre 2023">Visualización matemática - Diciembre 2023</p>
+                    <h3 data-en="Truncated Fourier Series" data-es="Serie de Fourier Truncada">Serie de Fourier Truncada
+                    </h3>
+                    <p data-en="Mathematical Visualization - December 2023"
+                        data-es="Visualización matemática - Diciembre 2023">Visualización matemática - Diciembre 2023
+                    </p>
                     <div class="project-links">
-                        <a href="https://github.com/pagreda888/Truncated-Fourier-series" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/pagreda888/Truncated-Fourier-series" class="project-link"
+                            target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                             <span data-en="Code" data-es="Código">Código</span>
                         </a>
@@ -1593,8 +1644,11 @@
     <section class="skills" id="skills">
         <div class="section-header reveal">
             <span class="section-tag" data-en="My Skills" data-es="Mis Habilidades">Mis Habilidades</span>
-            <h2 class="section-title" data-en="Technologies I work with" data-es="Tecnologías con las que trabajo">Tecnologías con las que trabajo</h2>
-            <p class="section-subtitle" data-en="A comprehensive toolkit for building modern applications" data-es="Un conjunto completo de herramientas para construir aplicaciones modernas">Un conjunto completo de herramientas para construir aplicaciones modernas</p>
+            <h2 class="section-title" data-en="Technologies I work with" data-es="Tecnologías con las que trabajo">
+                Tecnologías con las que trabajo</h2>
+            <p class="section-subtitle" data-en="A comprehensive toolkit for building modern applications"
+                data-es="Un conjunto completo de herramientas para construir aplicaciones modernas">Un conjunto completo
+                de herramientas para construir aplicaciones modernas</p>
         </div>
         <div class="skills-grid">
             <div class="skill-card reveal">
@@ -1602,7 +1656,9 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h3 data-en="Frontend Development" data-es="Desarrollo Frontend">Desarrollo Frontend</h3>
-                <p data-en="Creating responsive and interactive user interfaces with modern frameworks and tools." data-es="Creando interfaces de usuario responsivas e interactivas con frameworks y herramientas modernas.">Creando interfaces de usuario responsivas e interactivas con frameworks y herramientas modernas.</p>
+                <p data-en="Creating responsive and interactive user interfaces with modern frameworks and tools."
+                    data-es="Creando interfaces de usuario responsivas e interactivas con frameworks y herramientas modernas.">
+                    Creando interfaces de usuario responsivas e interactivas con frameworks y herramientas modernas.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">React</span>
                     <span class="skill-tag">TypeScript</span>
@@ -1616,7 +1672,9 @@
                     <i class="fas fa-server"></i>
                 </div>
                 <h3 data-en="Backend Development" data-es="Desarrollo Backend">Desarrollo Backend</h3>
-                <p data-en="Building robust and scalable server-side applications and APIs." data-es="Construyendo aplicaciones del lado del servidor robustas y escalables y APIs.">Construyendo aplicaciones del lado del servidor robustas y escalables y APIs.</p>
+                <p data-en="Building robust and scalable server-side applications and APIs."
+                    data-es="Construyendo aplicaciones del lado del servidor robustas y escalables y APIs.">Construyendo
+                    aplicaciones del lado del servidor robustas y escalables y APIs.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">Express</span>
@@ -1629,7 +1687,9 @@
                     <i class="fas fa-robot"></i>
                 </div>
                 <h3 data-en="AI & Machine Learning" data-es="IA y Machine Learning">IA y Machine Learning</h3>
-                <p data-en="Implementing AI solutions for natural language processing and data analysis." data-es="Implementando soluciones de IA para procesamiento de lenguaje natural y análisis de datos.">Implementando soluciones de IA para procesamiento de lenguaje natural y análisis de datos.</p>
+                <p data-en="Implementing AI solutions for natural language processing and data analysis."
+                    data-es="Implementando soluciones de IA para procesamiento de lenguaje natural y análisis de datos.">
+                    Implementando soluciones de IA para procesamiento de lenguaje natural y análisis de datos.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Gemini AI</span>
                     <span class="skill-tag">Transformers.js</span>
@@ -1650,7 +1710,8 @@
         <div class="contact-content" style="display: flex; justify-content: center;">
             <div class="contact-info reveal" style="text-align: center;">
                 <div class="contact-methods" style="align-items: center;">
-                    <a href="https://www.linkedin.com/in/pa8" class="contact-method" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/pa8" class="contact-method" target="_blank"
+                        rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                         <div>
                             <strong>LinkedIn</strong>
@@ -1678,7 +1739,8 @@
                 <!-- <a href="#" class="social-link" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a> -->
-                <a href="https://www.linkedin.com/in/pa8" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/pa8" class="social-link" aria-label="LinkedIn" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <!-- <a href="#" class="social-link" aria-label="Twitter">
@@ -1688,7 +1750,8 @@
                     <i class="fas fa-envelope"></i>
                 </a> -->
             </div>
-            <p data-en="© 2025 Pablo Agreda. All rights reserved." data-es="© 2025 Pablo Agreda. Todos los derechos reservados.">© 2025 Your Name. All rights reserved.</p>
+            <p data-en="© 2025 Pablo Agreda. All rights reserved."
+                data-es="© 2025 Pablo Agreda. Todos los derechos reservados.">© 2025 Your Name. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1765,7 +1828,7 @@
         function showBanner() {
             alertBanner.classList.remove('hide');
             document.body.classList.add('has-alert');
-            
+
             clearTimeout(bannerTimeout);
             bannerTimeout = setTimeout(() => {
                 alertBanner.classList.add('hide');
@@ -2023,7 +2086,7 @@
             const modalSlider = document.getElementById('modalSlider');
             const sliderImagesEl = document.getElementById('sliderImages');
             const sliderDotsEl = document.getElementById('sliderDots');
-            
+
             if (project.slides && Array.isArray(project.slides) && project.slides.length > 0) {
                 modalEmoji.style.display = 'none';
                 modalSlider.style.display = 'block';
@@ -2042,7 +2105,7 @@
             } else {
                 modalEmoji.style.display = 'flex';
                 modalSlider.style.display = 'none';
-                
+
                 // Si tiene preview image, mostrar imagen; sino, mostrar emoji
                 if (project.preview) {
                     modalEmoji.style.backgroundImage = `url('${project.preview}')`;
@@ -2052,7 +2115,7 @@
                     modalEmoji.textContent = project.emoji;
                 }
             }
-            
+
             // Manejar traducciones (si el campo es objeto con en/es, usar idioma actual)
             const getLocalizedText = (field) => {
                 if (typeof field === 'object' && field !== null) {
@@ -2060,23 +2123,23 @@
                 }
                 return field || '';
             };
-            
+
             document.getElementById('modalDate').textContent = getLocalizedText(project.date);
             document.getElementById('modalTitle').textContent = getLocalizedText(project.title);
             document.getElementById('modalDescription').textContent = getLocalizedText(project.description);
             document.getElementById('modalFunctionality').textContent = getLocalizedText(project.functionality) || (currentLang === 'en' ? 'Functionality details coming soon.' : 'Información de funcionamiento próximamente.');
-            
+
             const frontendTags = document.getElementById('modalFrontend');
             frontendTags.innerHTML = project.frontend.map(t => `<span class="modal-tag">${t}</span>`).join('');
-            
+
             const backendTags = document.getElementById('modalBackend');
             backendTags.innerHTML = project.backend.map(t => `<span class="modal-tag backend">${t}</span>`).join('');
-            
+
             const modalGithubBtn = document.getElementById('modalGithub');
             const modalDemoBtn = document.getElementById('modalDemo');
             const modalDemoText = document.getElementById('modalDemoText');
             const modalDemoIcon = modalDemoBtn.querySelector('i');
-            
+
             // Habilitar/deshabilitar botones según si tienen links válidos
             if (project.github && project.github !== '#') {
                 modalGithubBtn.href = project.github;
@@ -2085,7 +2148,7 @@
                 modalGithubBtn.href = '#';
                 modalGithubBtn.classList.add('disabled');
             }
-            
+
             if (project.demo && project.demo !== '#') {
                 modalDemoBtn.classList.remove('disabled');
                 // Detectar si es un PDF
@@ -2268,7 +2331,9 @@
     <div class="pdf-modal-overlay" id="pdfModal">
         <div class="pdf-modal">
             <div class="pdf-modal-header">
-                <h3 class="pdf-modal-title" data-en="Technical Documentation - Truncated Fourier Series" data-es="Documentación Técnica - Serie de Fourier Truncada">Documentación Técnica - Serie de Fourier Truncada</h3>
+                <h3 class="pdf-modal-title" data-en="Technical Documentation - Truncated Fourier Series"
+                    data-es="Documentación Técnica - Serie de Fourier Truncada">Documentación Técnica - Serie de Fourier
+                    Truncada</h3>
                 <button class="pdf-close" id="pdfClose">
                     <i class="fas fa-times"></i>
                 </button>
@@ -2279,4 +2344,5 @@
         </div>
     </div>
 </body>
+
 </html>
