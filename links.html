@@ -1,0 +1,548 @@
+        .link-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-align: center;
+            width: 100%;
+        }
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Enlaces | Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBKP4H97HB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GBKP4H97HB');
+    </script>
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 2rem;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Links Container */
+        .links-grid {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            min-height: 110px;
+            width: 350px;
+        }
+
+        .link-card:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(14, 165, 233, 0.2) 100%);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .link-icon {
+            font-size: 3rem;
+            margin-bottom: 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+        }
+
+        .link-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+
+        /* CV Section */
+        .cv-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .cv-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .cv-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .cv-button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .cv-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+        }
+
+        .cv-button.secondary {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--primary);
+        }
+
+        .cv-button.secondary:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        /* PDF Modal Styles */
+        .pdf-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .pdf-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pdf-modal {
+            background: var(--dark-light);
+            border-radius: 16px;
+            max-width: 1200px;
+            width: 100%;
+            height: 90vh;
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-modal-overlay.active .pdf-modal {
+            transform: scale(1);
+        }
+
+        .pdf-modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-modal-title {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .pdf-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .pdf-close:hover {
+            background: var(--primary);
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 16px 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-modal {
+                height: 80vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-code"></i> Portfolio
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#portfolio">Portafolio</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+                <li><a href="links.html">Enlaces</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <section class="section">
+            <h1>CV y Enlaces</h1>
+            <p class="subtitle">Mi Currículum y Perfil Profesional</p>
+        </section>
+
+        <!-- CV Section -->
+        <section class="cv-section">
+            <h2>
+                <i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>
+                Currículum Vitae
+            </h2>
+            <p style="color: var(--gray-light); margin-bottom: 1.5rem;">
+                Descarga o visualiza mi CV en español e inglés
+            </p>
+            <div class="cv-buttons">
+                <!-- Spanish CV - Preview -->
+                <button class="cv-button" data-pdf="docs/CV-PABLO-AGREDA.pdf" onclick="event.preventDefault(); openPdfModal('docs/CV-PABLO-AGREDA.pdf', 'CV - Español');">
+                    <i class="fas fa-eye"></i>
+                    Ver CV Español
+                </button>
+
+                <!-- Spanish CV - Download -->
+                <a href="docs/CV-PABLO-AGREDA.pdf" download class="cv-button secondary">
+                    <i class="fas fa-download"></i>
+                    Descargar ES
+                </a>
+
+                <!-- English CV - Preview -->
+                <button class="cv-button" data-pdf="docs/CV-PABLO-AGREDA-ENG.pdf" onclick="event.preventDefault(); openPdfModal('docs/CV-PABLO-AGREDA-ENG.pdf', 'CV - English');">
+                    <i class="fas fa-eye"></i>
+                    View CV English
+                </button>
+
+                <!-- English CV - Download -->
+                <a href="docs/CV-PABLO-AGREDA-ENG.pdf" download class="cv-button secondary">
+                    <i class="fas fa-download"></i>
+                    Download EN
+                </a>
+            </div>
+        </section>
+
+        <!-- Links Grid -->
+        <section class="section">
+            <div class="links-grid">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="link-card">
+                    <div class="link-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="link-title" style="text-align:center; width:100%;">Mi LinkedIn</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal-overlay" id="pdfModal">
+        <div class="pdf-modal">
+            <div class="pdf-modal-header">
+                <h3 class="pdf-modal-title" id="pdfModalTitle">CV</h3>
+                <button class="pdf-close" id="pdfClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="pdf-viewer">
+                <iframe id="pdfViewer" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // PDF Modal functions
+        function openPdfModal(pdfUrl, title = 'CV') {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfTitle = document.getElementById('pdfModalTitle');
+            if (!pdfModal || !pdfViewer) return;
+            pdfTitle.textContent = title;
+            pdfViewer.src = pdfUrl;
+            pdfModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdfModal() {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (!pdfModal || !pdfViewer) return;
+            pdfModal.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                pdfViewer.src = '';
+            }, 200);
+        }
+
+        // Wire close handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfClose = document.getElementById('pdfClose');
+            if (!pdfModal || !pdfClose) return;
+
+            pdfClose.addEventListener('click', closePdfModal);
+            pdfModal.addEventListener('click', (e) => {
+                if (e.target === pdfModal) closePdfModal();
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            const pdfModal = document.getElementById('pdfModal');
+            if (pdfModal && pdfModal.classList.contains('active')) {
+                closePdfModal();
+            }
+        });
+
+        // Track link clicks with Google Analytics
+        document.querySelectorAll('a[href^="https"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const url = link.getAttribute('href');
+                gtag('event', 'click_external_link', {
+                    'link_url': url
+                });
+            });
+        });
+
+        // Track CV views
+        document.querySelectorAll('[data-pdf]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const pdfUrl = btn.getAttribute('data-pdf');
+                gtag('event', 'view_cv', {
+                    'cv_file': pdfUrl
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
