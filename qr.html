@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR de mis enlaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-container {
+            background: #1e293b;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px #0003;
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .qr-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .qr-img {
+            border-radius: 12px;
+            box-shadow: 0 4px 16px #0002;
+            margin-bottom: 1rem;
+        }
+        .qr-desc {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .qr-link {
+            color: #6366f1;
+            text-decoration: underline;
+            font-size: 1rem;
+        }
+        .qr-download {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .qr-download:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <div class="qr-title">QR de mis enlaces</div>
+        <img class="qr-img" id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://pagreda888.github.io/links.html" alt="QR para links" width="220" height="220" />
+        <div class="qr-desc">Escanea este código para abrir mi página de enlaces.<br>
+            <a class="qr-link" href="https://pagreda888.github.io/links.html" target="_blank">Ir a mis enlaces</a>
+        </div>
+        <button class="qr-download" onclick="downloadQR()">Descargar QR</button>
+    </div>
+    <script>
+        function downloadQR() {
+            const img = document.getElementById('qrImg');
+            const link = document.createElement('a');
+            link.href = img.src;
+            link.download = 'qr-mis-enlaces.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
